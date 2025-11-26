@@ -9,7 +9,9 @@ WORKDIR /app
 
 # Copy requirements
 COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Устанавливаем CPU-only torch (легкая версия), затем остальные пакеты
+RUN pip install --no-cache-dir --default-timeout=1000 torch torchaudio --index-url https://download.pytorch.org/whl/cpu && \
+    pip install --no-cache-dir --default-timeout=1000 -r requirements.txt
 
 # Copy app code
 COPY . .
@@ -19,3 +21,5 @@ EXPOSE 5003
 
 # Command to run the app
 CMD ["gunicorn", "-b", "0.0.0.0:5003", "app:app"]
+
+

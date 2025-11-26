@@ -1,0 +1,43 @@
+# Временные файлы загрузок
+uploads/*
+!uploads/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Модели Whisper (скачиваются автоматически)
+.whisper/
+*.pt
+*.pth
+
+# Большие аудио/видео файлы
+*.m4a
+*.mp3
+*.mp4
+*.wav
+*.avi
+*.mkv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Временные файлы Windows
+Thumbs.db
+Desktop.ini
+
+# Логи
+*.log
+
+# PDF инструкции (если не нужны в репозитории)
+*.pdf
+

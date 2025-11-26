@@ -1,4 +1,4 @@
-flask
-gunicorn
-openai-whisper
-torch
+flask==3.0.0
+gunicorn==21.2.0
+openai-whisper==20250625
+torch==2.9.0
